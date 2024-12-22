@@ -5,4 +5,4 @@ sudo cp -r website/* html/
 
 # rm $fileTemp
 
-docker compose up -d
+docker compose up -d --force-recreate

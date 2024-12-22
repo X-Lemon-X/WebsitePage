@@ -1,5 +1,9 @@
+networks:
+  reverse_proxy_network:
+    driver: bridge
+    name: reverse_proxy_network
+    external: true
 
-version: '3'
 services:
   web:
     image: nginx
@@ -13,3 +17,5 @@ services:
     - NGINX_HOST=nihilia.xyz
     - NGINX_PORT=80
     restart: always
+    networks:
+      - reverse_proxy_network
